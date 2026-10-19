@@ -2,7 +2,10 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
+<script>
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>温州奶龙大学 WowLand | 三校共创成长世界</title>
 <meta name="description" content="温州奶龙大学 WowLand：温州大学、温州医科大学、温州职业技术大学三校联合的成长世界。围绕抖音AI创变者计划、成长现场与野生创作Camp，让大学生真实开始、持续生长。">

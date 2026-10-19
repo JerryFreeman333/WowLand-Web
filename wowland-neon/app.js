@@ -4,20 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
 
-  // A normal open or refresh should always start from the hero, not a restored scroll position.
-  // Explicit hash links (for example #records) keep their normal deep-link behavior.
-  if(!location.hash){
-    const returnToHome = () => {
-      const root = document.documentElement;
-      const previous = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';
-      scrollTo(0, 0);
-      root.style.scrollBehavior = previous;
-    };
-    returnToHome();
-    addEventListener('pageshow', returnToHome);
-    addEventListener('load', returnToHome);
-  }
+  // Every normal page open, refresh, or history restore starts at the hero.
+  // Navigation clicks still work after load; only the persisted entry position is reset.
+  const returnToHome = () => {
+    if(location.hash) history.replaceState(null, '', location.pathname + location.search);
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    scrollTo(0, 0);
+    root.style.scrollBehavior = previous;
+  };
+  returnToHome();
+  addEventListener('pageshow', returnToHome);
+  addEventListener('load', returnToHome);
 
   // Static text
   $('#brandShort').textContent = D.brandShort;
