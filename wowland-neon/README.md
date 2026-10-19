@@ -25,7 +25,7 @@
 `.hero-mesh` 升级为全页固定的环境色场，随滚动在 Hero 配色（红为主 + 青/紫辅助）与内容区配色（紫/青为主 + 红收束）之间按视口高度关键帧插值，rAF 逐帧缓动（lerp 0.09），实现 Hero → 社群定位的平滑色彩过渡；`prefers-reduced-motion` 下直接跳至目标色。
 
 ## WowWall 留言墙
-原「官方视觉与说明物料」区已替换为 WowWall 留言墙：大屏展示用户提供的留言墙界面截图（`assets/brand/wowwall-wide.webp`），「前往留言」按钮跳转 `https://wall.qianc.ltd/`。链接与文案在 `data.js` 的 `wall` 字段维护；首屏迷你海报与导航均已指向留言墙。
+原「官方视觉与说明物料」区已替换为 WowWall 留言墙：大屏展示用户提供的 WowWall 海报（`assets/brand/wowwall-poster.webp`），「前往留言」按钮跳转 `https://wall.qianc.ltd/`。链接与文案在 `data.js` 的 `wall` 字段维护；首屏迷你海报与导航均已指向留言墙。
 
 ## 未来编辑入口
 1. 公告：编辑 `data.js` → `notices`
