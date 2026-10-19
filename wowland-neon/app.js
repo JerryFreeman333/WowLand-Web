@@ -4,6 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
 
+  // A normal open or refresh should always start from the hero, not a restored scroll position.
+  // Explicit hash links (for example #records) keep their normal deep-link behavior.
+  if(!location.hash){
+    const returnToHome = () => {
+      const root = document.documentElement;
+      const previous = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      scrollTo(0, 0);
+      root.style.scrollBehavior = previous;
+    };
+    returnToHome();
+    addEventListener('pageshow', returnToHome);
+    addEventListener('load', returnToHome);
+  }
+
   // Static text
   $('#brandShort').textContent = D.brandShort;
   $('#alliance').textContent = D.alliance;
