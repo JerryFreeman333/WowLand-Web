@@ -322,11 +322,13 @@ body.glitching .title .cyber{animation:glitch .3s steps(2,end) 2}
 /* The canvas paints DENSE 0/1 code INSIDE the modal frame; a red scan line
    sweeps top→bottom and rows are revealed as the line passes — the window
    itself is being decoded, not a background effect. */
+body.qr-lock{overflow:hidden}
 .qr-modal{position:fixed;inset:0;z-index:500;display:none;place-items:center;padding:24px;background:rgba(2,3,5,.55)}
 .qr-modal.open{display:grid}
-.qr-card{position:relative;width:min(1160px,96vw);max-height:88vh;border:1px solid rgba(255,46,77,.4);border-radius:28px;background:linear-gradient(180deg,#0a0e14,#070a0f);padding:34px;box-shadow:0 0 0 1px rgba(255,46,77,.25),0 40px 120px #000c;overflow:hidden}
+.qr-card{position:relative;width:min(1160px,96vw);max-height:88vh;border:1px solid rgba(255,46,77,.4);border-radius:28px;background:linear-gradient(180deg,#0a0e14,#070a0f);padding:34px;box-shadow:0 0 0 1px rgba(255,46,77,.25),0 40px 120px #000c;overflow:hidden;opacity:0;transform:translateY(16px) scale(.988);transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1)}
+.qr-modal.open .qr-card{opacity:1;transform:none}
 .qr-card-inner{position:relative}
-.qr-code-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:9;border-radius:28px}
+.qr-code-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:9;border-radius:28px;opacity:0;transition:opacity .3s}
 .qr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
 .qr-item{position:relative;border:1px solid var(--line);border-radius:22px;padding:18px;background:rgba(255,255,255,.028);text-align:center;transition:.3s}
 .qr-item img{width:100%;aspect-ratio:3/4;object-fit:contain;border-radius:16px;background:#fff}

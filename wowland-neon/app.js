@@ -248,6 +248,157 @@ document.addEventListener('DOMContentLoaded', () => {
     cancelAnimationFrame(raf);draw();
   }
 
+  // ---- QR modal ----
+  const qrModal = $('#qrModal');
+  const qrCard = $('#qrCard');
+  const qrClose = $('#qrClose');
+  const qrCanvas = $('#qrCodeCanvas');
+  const qrCtx = qrCanvas?.getContext('2d');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let qrAnim = null;
+  let qrLastFocus = null;
+
+  function clearQrCanvas(){
+    if(!qrCanvas || !qrCtx) return;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    qrCtx.setTransform(1, 0, 0, 1, 0, 0);
+    qrCtx.clearRect(0, 0, qrCanvas.width, qrCanvas.height);
+    qrCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function animateQrDecode(){
+    if(!qrModal || !qrCard || !qrCanvas || !qrCtx) return;
+    cancelAnimationFrame(qrAnim);
+    clearQrCanvas();
+
+    if(reduceMotion.matches){
+      qrCanvas.style.opacity = '0';
+      return;
+    }
+
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const rect = qrCard.getBoundingClientRect();
+    const w = Math.max(1, rect.width);
+    const h = Math.max(1, rect.height);
+    qrCanvas.width = Math.round(w * dpr);
+    qrCanvas.height = Math.round(h * dpr);
+    qrCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    qrCanvas.style.opacity = '1';
+
+    const chars = '01';
+    const rowHeight = 14;
+    const charWidth = 6.8;
+    const pad = 18;
+    const duration = 1650;
+    const start = performance.now();
+
+    function draw(now){
+      const raw = Math.min(1, (now - start) / duration);
+      const progress = 1 - Math.pow(1 - raw, 3);
+      const scanY = h * progress;
+
+      qrCtx.clearRect(0, 0, w, h);
+      if(scanY < h){
+        qrCtx.fillStyle = 'rgba(3,5,8,.91)';
+        qrCtx.fillRect(0, scanY, w, h - scanY);
+
+        qrCtx.font = '11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+        qrCtx.textBaseline = 'top';
+        const count = Math.ceil((w - pad * 2) / charWidth);
+        let row = Math.max(0, Math.floor(scanY / rowHeight));
+        for(let y = row * rowHeight; y < h; y += rowHeight){
+          let bits = '';
+          for(let i = 0; i < count; i++) bits += chars[(Math.random() * 2) | 0];
+          qrCtx.fillStyle = row % 9 === 0
+            ? 'rgba(255,46,77,.36)'
+            : row % 3 === 0
+              ? 'rgba(49,232,200,.24)'
+              : 'rgba(49,232,200,.35)';
+          qrCtx.fillText(bits, pad, y);
+          row++;
+        }
+      }
+
+      if(raw < 1){
+        const lineY = Math.min(h - 1, scanY);
+        qrCtx.save();
+        qrCtx.shadowColor = 'rgba(255,46,77,.9)';
+        qrCtx.shadowBlur = 18;
+        qrCtx.fillStyle = 'rgba(255,46,77,.95)';
+        qrCtx.fillRect(0, lineY, w, 2);
+        qrCtx.restore();
+        qrCtx.fillStyle = 'rgba(255,46,77,.12)';
+        qrCtx.fillRect(0, Math.max(0, lineY - 12), w, 12);
+        qrCtx.font = '10px ui-monospace, SFMono-Regular, Menlo, monospace';
+        qrCtx.fillStyle = 'rgba(255,144,160,.9)';
+        qrCtx.fillText(`DECODE ${String(Math.round(raw * 100)).padStart(3, '0')}%`, w - 112, Math.max(8, lineY - 16));
+        qrAnim = requestAnimationFrame(draw);
+      }else{
+        qrCtx.clearRect(0, 0, w, h);
+        qrCanvas.style.opacity = '0';
+        qrAnim = null;
+      }
+    }
+
+    qrAnim = requestAnimationFrame(draw);
+  }
+
+  function openQrModal(){
+    if(!qrModal) return;
+    qrLastFocus = document.activeElement;
+    qrModal.classList.add('open');
+    qrModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('qr-lock');
+    requestAnimationFrame(() => {
+      animateQrDecode();
+      qrClose?.focus({ preventScroll: true });
+    });
+  }
+
+  function closeQrModal(){
+    if(!qrModal || !qrModal.classList.contains('open')) return;
+    qrModal.classList.remove('open');
+    qrModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('qr-lock');
+    cancelAnimationFrame(qrAnim);
+    qrAnim = null;
+    clearQrCanvas();
+    if(qrLastFocus && typeof qrLastFocus.focus === 'function'){
+      qrLastFocus.focus({ preventScroll: true });
+    }
+  }
+
+  $$('.qr-open').forEach(btn => btn.addEventListener('click', openQrModal));
+  qrClose?.addEventListener('click', closeQrModal);
+  qrModal?.addEventListener('click', e => {
+    if(e.target === qrModal) closeQrModal();
+  });
+  document.addEventListener('keydown', e => {
+    if(!qrModal?.classList.contains('open')) return;
+    if(e.key === 'Escape'){
+      e.preventDefault();
+      closeQrModal();
+      return;
+    }
+    if(e.key === 'Tab'){
+      const focusable = [...qrModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')]
+        .filter(el => !el.disabled && el.getClientRects().length);
+      if(!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if(e.shiftKey && document.activeElement === first){
+        e.preventDefault();
+        last.focus();
+      }else if(!e.shiftKey && document.activeElement === last){
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+  addEventListener('resize', () => {
+    if(qrModal?.classList.contains('open')) animateQrDecode();
+  });
+
   // Edit anchors
   $$('.edit-anchor').forEach(a=>a.addEventListener('click',e=>{
     e.preventDefault();alert('编辑入口已保留：修改 data.js 中对应字段即可更新该板块。');
