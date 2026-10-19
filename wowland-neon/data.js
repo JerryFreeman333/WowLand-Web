@@ -6,9 +6,9 @@ window.SITE = {
   intro: "WowLand 是陪大学生真实开始、持续生长的成长世界。我们不做空泛口号，而是把方法、同伴、导师与机会放进行动里，让想法落地、让创造被看见。",
   updated: "2026-10-18",
   networks: [
-    { id:"wzu", name:"温州大学", en:"WENZHOU UNIVERSITY", campus:"茶山 · 中心校区", tag:"综合 / 创新实践", image:"assets/campus-wzu-cyber.webp", color:"#ff2e4d", status:"开放招募" },
-    { id:"wm", name:"温州医科大学", en:"WENZHOU MEDICAL UNIVERSITY", campus:"茶山 · 同心楼片区", tag:"医学 / 健康科技", image:"assets/campus-wm-cyber.webp", color:"#31e8c8", status:"开放招募" },
-    { id:"wzvc", name:"温州职业技术大学", en:"WENZHOU VOCATIONAL & TECHNICAL UNIVERSITY", campus:"茶山 · 技能实践区", tag:"技能 / 产业转化", image:"assets/campus-wzvc-cyber.webp", color:"#ffd54a", status:"开放招募" }
+    { id:"wzu", name:"温州大学", en:"WENZHOU UNIVERSITY", campus:"茶山 · 中心校区", tag:"综合 / 创新实践", image:"assets/campus-wzu-cyber-2026.webp", color:"#ff2e4d", status:"开放招募" },
+    { id:"wm", name:"温州医科大学", en:"WENZHOU MEDICAL UNIVERSITY", campus:"茶山 · 同心楼片区", tag:"医学 / 健康科技", image:"assets/campus-wm-cyber-2026.webp", color:"#31e8c8", status:"开放招募" },
+    { id:"wzvc", name:"温州职业技术大学", en:"WENZHOU VOCATIONAL & TECHNICAL UNIVERSITY", campus:"茶山 · 技能实践区", tag:"技能 / 产业转化", image:"assets/campus-wzvc-cyber-2026.webp", color:"#ffd54a", status:"开放招募" }
   ],
   brands: [
     {
