@@ -1,0 +1,298 @@
+[
+  {
+    "short": "Clonex",
+    "title": "Clonex",
+    "subtitle": "Metaverse Builder w/ @RTFKT",
+    "tags": "[ WebGL / PFP project / Light Source ] ",
+    "description": "Shading Ninja / Creative coder / Murakami / 🥷🏼",
+    "video": "akira.mp4",
+    "url": "https://clonex.rtfkt.com/",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Jiometory",
+    "title": "Jiometory \\n No Compute",
+    "subtitle": "Long Form Generative art",
+    "tags": "[ WebGL / Long Form Generative art ] ",
+    "description": "Artblock / NFT / crypto ",
+    "video": "jio.mp4",
+    "url": "https://samsy.ninja/nocompute/index.html",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "onCyber",
+    "title": "OnCyber",
+    "subtitle": "World Editor & performances w/ @oncyber",
+    "tags": "[ Real time Metaverse Editor ] ",
+    "description": "Metaverse Maker / Visual Shading 🦄",
+    "video": "oncyber.mp4",
+    "url": "https://v2.oncyber.io/play/R35GnWjTLs5hGMCyjuC7?draft=true",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "TomrrwLand",
+    "title": "TomorrowLand",
+    "subtitle": "WebGL map & Festival @Dogstudio",
+    "tags": "[ WebGL / Debug god tools / 1 million viewers ] ",
+    "description": "WebGL Tech Director / Creative coder / performances advocate",
+    "video": "tmls.mp4",
+    "url": "https://vimeo.com/444254918",
+    "prices": "Fwa",
+    "custom": {
+      "text": "case",
+      "link": "https://thefwa.com/cases/tomorrowland-around-the-world"
+    }
+  },
+  {
+    "short": "World Expo",
+    "title": "World Exposition \\n Dubai 2020",
+    "subtitle": "WebGL on site replica w/ @Dogstudio",
+    "tags": "[ WebGL / Debug god tools / World Event ] ",
+    "description": "WebGL Tech Director / Creative coder / performances advocate",
+    "video": "dubai.mp4",
+    "url": "https://virtualexpodubai.com/",
+    "prices": "Fwa",
+    "custom": {
+      "text": "case",
+      "link": "https://dogstudio.co/cases/virtual-expo-dubai-2020/"
+    }
+  },
+  {
+    "short": "Cryptopunk",
+    "title": "CryptoPunk \\nSneakers Metaverse",
+    "subtitle": "NFT-drop / RTFKT Design studio",
+    "tags": "[ Voxels / Glitches / cheat codes / WebGL ] ",
+    "description": "WebGL architecture & development / Shader ninja / week-end RIP.",
+    "video": "cryptopunk.mp4",
+    "url": "https://rtfkt.com/project/punksProject",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Naoz",
+    "title": "NAOZ \\nPersistent \\nDigital Venue",
+    "subtitle": "Digital Entertainment Venue",
+    "tags": "[ WebGL / Debug god tools / Festival Engine ] ",
+    "description": "WebGL Tech Director & development / Shader writer",
+    "video": "naoz.mp4",
+    "url": "https://www.awwwards.com/sites/naoz-the-digital-venue-1",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Clouds",
+    "title": "Above the Clouds \\n 111 W 57",
+    "subtitle": "Billionaires row - Outpost Agency",
+    "tags": "[ Cloud Instance sorter & ethereal env ] ",
+    "description": "WebGL Creative Development / Shader & performances",
+    "video": "output55.mp4",
+    "url": "https://quadplex80.com/",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Capital One",
+    "title": "Capital One",
+    "subtitle": "Dataviz / Hush design agency",
+    "tags": "[ True 16K webgl backbuffer / gigantic walls / custom browser ] ",
+    "description": "WebGL architecture & development / Creative technologist / performances advocate",
+    "video": "capital.mp4",
+    "url": "https://heyhush.com/work/capital-one-workplace-brand-visualizations/",
+    "prices": "",
+    "custom": {
+      "text": "watch video",
+      "link": "https://vimeo.com/267591039"
+    }
+  },
+  {
+    "short": "StoneWall",
+    "title": "Google \\n Stonewall Forever",
+    "subtitle": "Procedural Monument / LGBT Center ",
+    "tags": "webgl / es6 / postprocessing / glsl",
+    "description": "Creative Tech / Webgl Arch / 3D Lead / Perf advocate",
+    "video": "lgbt.mp4",
+    "url": "https://stonewallforever.org/",
+    "prices": "Fwa / Awwward",
+    "custom": {}
+  },
+  {
+    "short": "TiltBrush",
+    "title": "TiltBrush WebAR",
+    "subtitle": "Reverse Engineering / TiltBrush / Augmented Reality",
+    "tags": "webgl / es6 / postprocessing / glsl",
+    "description": "Shading ninja / Personal",
+    "video": "tiltbrush.mp4",
+    "url": "http://samsy.ninja/tiltbrush/index.html",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "DogStudio",
+    "title": "Dog Interactivity",
+    "subtitle": "WebGL Nav / Matcap Skinning / Dogstudio",
+    "tags": "webgl / es6 / draco / skinning",
+    "description": "Webgl Arch",
+    "video": "dogcut.mp4",
+    "url": "https://dogstudio.co/",
+    "prices": "Fwa / Awwward",
+    "custom": {}
+  },
+  {
+    "short": "Qalam",
+    "title": "Google \\n Qalam Creator",
+    "subtitle": "Tilt Brush Reverse Engineering / Stink Studios",
+    "tags": "webgl / glsl / calligraphy",
+    "description": "WebGL advocate / tiltbrush workflow designer",
+    "video": "qalam.mp4",
+    "url": "https://www.stinkstudios.com/work/qalam",
+    "prices": "Fwa",
+    "custom": {
+      "text": "case study",
+      "link": "https://medium.com/@stinkstudios/creating-qalam-d016a0a52d56"
+    }
+  },
+  {
+    "short": "Here Vision",
+    "title": "HERE Vision",
+    "subtitle": "Mobile webVR / 3D Sequencer / B-Reel",
+    "tags": "webgl / es6 / postprocessing / glsl",
+    "description": "VR Lead dev / Shading ninja / Stereoscopic rendering",
+    "video": "here.mp4",
+    "url": "https://www.youtube.com/watch?v=AxsxQkQimmE&ab_channel=epok-tech",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Kikk Fest",
+    "title": "Kikk AR \\n Festival",
+    "subtitle": "Augmented Reality Exhibition",
+    "tags": "ARKit / webgl",
+    "description": "Co-conceptor / tech director & artist / Dogstudio",
+    "video": "kikk2.mp4",
+    "url": "https://dogstudio.co/cases/kikk-ar/",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Arkade",
+    "title": "Arkade London",
+    "subtitle": "Audio Reactive Art",
+    "tags": "webgl / es6 / postprocessing / glsl",
+    "description": "Initiator / Conceptor / webgl & front end developer",
+    "video": "arkade.mp4",
+    "url": "http://arkade.samsy.ninja",
+    "prices": "Fwa / Awwward / Chrome Experiment",
+    "custom": {
+      "text": "watch video",
+      "link": "https://vimeo.com/175949917"
+    }
+  },
+  {
+    "short": "Intangible",
+    "title": "Intangible Matter",
+    "subtitle": "Webgl Artwork for Chanel / Stink Studios",
+    "tags": "webgl / threejs / react",
+    "description": "Webgl Shader advocate, Make up and optimiser",
+    "video": "chanel.mp4",
+    "url": "https://www.youtube.com/watch?v=y7hTuqxq14Y&ab_channel=i-D",
+    "prices": "Fwa / Awwward",
+    "custom": {
+      "text": "watch video",
+      "link": "https://www.youtube.com/watch?v=y7hTuqxq14Y"
+    }
+  },
+  {
+    "short": "Inform",
+    "title": "In-form.io",
+    "subtitle": "Prototype WIP ",
+    "tags": "webgl / backbone / postprocessing / glsl",
+    "description": "Initiator / Conceptor / webgl & front end developer",
+    "video": "inform.mp4",
+    "url": "",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "SuperCharge",
+    "title": "ARCharge",
+    "subtitle": "A webAR demo",
+    "tags": "Experiment / postprocessing / webAR / lines",
+    "description": "3D AR alone developer",
+    "video": "supercharge.mp4",
+    "url": "",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "Speak to go",
+    "title": "Speak to go",
+    "subtitle": "A googleVR project",
+    "tags": "webgl / speech-recognition / google street view",
+    "description": "Creative and Prototyper",
+    "video": "webvro.mp4",
+    "url": "https://webvrexperiments.com/experiment/speak-to-go",
+    "prices": "WebVR Chrome experiment",
+    "custom": {}
+  },
+  {
+    "short": "Sonorans",
+    "title": "Sonoran's Valley",
+    "subtitle": "3D real time desert storm",
+    "tags": "webgl / speech-recognition / google street view",
+    "description": "Initiator / Conceptor / Lead developer",
+    "video": "sonorans.mp4",
+    "url": "",
+    "prices": "Fwa / Awwward / Chrome experiment / Digg / Dite inspire",
+    "custom": {}
+  },
+  {
+    "short": "Icecoon",
+    "title": "The Legend of Icecoon",
+    "subtitle": "Christmas Experiment / Journey in Diamonds Cave",
+    "tags": "webgl / Mobile / postprocessing / glsl / Optmizer",
+    "description": "Initiator / Conceptor / 3D Dev",
+    "video": "xmas.mp4",
+    "url": "",
+    "prices": "Fwa",
+    "custom": {}
+  },
+  {
+    "short": "Daedelus",
+    "title": "Daedelus Labyrinths",
+    "subtitle": "Audio reactive GIF Generator",
+    "tags": "webgl / Mobile / postprocessing / glsl / webaudio",
+    "description": "Tech Director / 3D dev / WebAudio",
+    "video": "daedelus.mp4",
+    "url": "",
+    "prices": "The Creator Projects",
+    "custom": {
+      "text": "watch video",
+      "link": "https://www.youtube.com/watch?v=onMRZ9N59-0"
+    }
+  },
+  {
+    "short": "Parallel",
+    "title": "Parallel studio",
+    "subtitle": "Indie 360 video game studio portfolio",
+    "tags": "webgl / 360 / mobile",
+    "description": "Tech lead / Front developer",
+    "video": "parallel.mp4",
+    "url": "http://parallel-studio.com",
+    "prices": "",
+    "custom": {}
+  },
+  {
+    "short": "LightizOn",
+    "title": "Lightizon",
+    "subtitle": "Real time light painting installation",
+    "tags": "openframeworks / opengl / glsl",
+    "description": "Academic project director / Lead developer",
+    "video": "lightizon.mp4",
+    "url": "https://www.youtube.com/watch?v=tbQBR1gyNGo",
+    "prices": "",
+    "custom": {}
+  }
+]

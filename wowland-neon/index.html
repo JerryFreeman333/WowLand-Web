@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>温州奶龙大学 WowLand | 三校共创成长世界</title>
+<meta name="description" content="温州奶龙大学 WowLand：温州大学、温州医科大学、温州职业技术大学三校联合的成长世界。围绕抖音AI创变者计划、成长现场与野生创作Camp，让大学生真实开始、持续生长。">
+<meta name="theme-color" content="#050608">
+<meta property="og:title" content="温州奶龙大学 WowLand">
+<meta property="og:description" content="三校联合的大学生共创社群。让创意照进现实，向世界生长，向自己扎根。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="js">
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-logo">WOWLAND</div>
+    <div class="boot-bar"><i></i></div>
+    <small>INITIALIZING WENZHOU CAMPUS NETWORK</small>
+  </div>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="noise" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+
+<div class="shell">
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <img class="brand-logo" src="assets/brand/logo-mark.webp" alt="抖音校园 WowLand 标识">
+      <span><b id="brandShort">WOWLAND</b><small id="alliance">三校联盟</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#about">关于</a>
+      <a href="#brands">活动品牌</a>
+      <a href="#board">公告</a>
+      <a href="#wall">留言墙</a>
+      <a href="#records">活动记录</a>
+      <a href="#retro">往期回顾</a>
+      <button class="nav-cta qr-open" type="button">加入 WowLand</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero-mesh" aria-hidden="true"></div>
+<section class="hero" id="top">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="kicker"><i></i> WENZHOU CAMPUS NETWORK · ONLINE</p>
+      <h1 class="title"><span>温州奶龙大学</span><br><span class="cyber">WowLand</span><span class="pink">.</span></h1>
+      <p class="hero-sub">陪大学生真实开始、持续生长的成长世界。<br>三个活动品牌，三校联合，让想法落地、让创造被看见。</p>
+      <div class="hero-meta">
+        <span class="chip">温州大学</span><span class="chip">温州医科大学</span><span class="chip">温州职业技术大学</span>
+        <span class="chip" id="heroSlogan"></span>
+      </div>
+      <a class="hero-poster-link reveal" href="#wall" aria-label="前往 WowWall 留言墙"><img src="assets/brand/wowwall-wide.webp" alt="WowWall 留言墙预览"></a>
+      <div class="hero-actions">
+        <button class="btn primary qr-open" type="button">加入三校社群 <span>↗</span></button>
+        <a class="btn ghost" href="#brands">浏览活动品牌</a>
+      </div>
+    </div>
+    <aside class="campus-panel" aria-label="三校联盟">
+      <h2>CAMPUS NETWORK / 3 NODES</h2>
+      <div class="campus-row" id="campusWrap"></div>
+      <div class="panel-foot"><span>NODE STATUS: OPEN</span><span>UPDATED <span id="update"></span></span></div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">01 / ABOUT WOWLAND</p><h2 class="sec-title">社群定位</h2></div>
+      <p class="sec-desc">以三校联盟为起点，建立一个能持续参与、沉淀成果、看见彼此的成长系统。</p>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="big-quote">让创意<b>照进现实</b>，<br>向世界生长，<br>向自己<b>扎根</b>。</p>
+        <div class="about-stats">
+          <div class="stat"><b>3</b><span>联合高校节点</span></div>
+          <div class="stat"><b>3</b><span>系列活动品牌</span></div>
+          <div class="stat"><b>∞</b><span>真实生长样本</span></div>
+        </div>
+      </div>
+      <article class="about-card reveal">
+        <p id="intro"></p>
+        <div class="rule"></div>
+        <p>依托抖音，WowLand 会根据具体项目提供方法与导师指导、流量扶持、项目资源支持，以及相关工作机会。日常运营阵地在抖音群聊，分为<b>校园常设群</b>与<b>活动群</b>两类。</p>
+        <a class="edit-anchor" href="#" style="color:var(--cyan);font-family:var(--mono);font-size:11px;letter-spacing:.2em">EDIT INTRO ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">02 / PROGRAMS</p><h2 class="sec-title">三个系列活动品牌</h2></div>
+      <p class="sec-desc">活动还没开启时，品牌结构与未来编辑入口已经就位；公告与招募会持续更新。</p>
+    </div>
+    <div class="brands" id="brandWrap"></div>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">03 / HOW TO JOIN</p><h2 class="sec-title">从常设群到活动群</h2></div>
+      <p class="sec-desc">常设群是参与入口，活动群负责项目推进；项目结束后，与温州本地企业 AI 社群建联，持续迭代优秀作品。</p>
+    </div>
+    <div class="path" id="pathWrap"></div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">04 / BULLETIN</p><h2 class="sec-title">活动公告板</h2></div>
+      <p class="sec-desc">三校社群筹备信息、招募入口和未来活动安排都会在这里更新。</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <div><h3>最新公告</h3><small>SYSTEM: CAMPUS BOARD / WENZHOU</small></div>
+      </div>
+      <div class="panel-body" id="noticeList"></div>
+      <div class="panel-foot" style="padding:16px 22px 20px"><span>未来编辑入口：更新 data.js 的 notices 数组</span><a class="edit-anchor" href="#" style="color:var(--cyan)">EDIT BOARD ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="records">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">05 / FIELD LOG</p><h2 class="sec-title">活动记录</h2></div>
+      <p class="sec-desc">首场活动结束后，这里会展示现场影像、作品、成员复盘与跨校协作成果。</p>
+    </div>
+    <div class="log-grid" id="logPreview">
+      <div class="log-empty">
+        <div>
+          <b>NO SIGNAL</b>
+          <p>首批活动记录尚未产生。<br>未来会在这里接入照片、作品链接、参与名单与复盘档案。</p>
+          <p style="color:#8fa3b1;font-size:11px;font-family:var(--mono);margin:14px 0 0">编辑入口：更新 data.js → logs 数组</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wall">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">06 / WOW WALL</p><h2 class="sec-title">WowWall 留言墙</h2></div>
+      <p class="sec-desc">把想说的话贴上去——灵感、提问、活动应援，都在三校共同的留言墙上。</p>
+    </div>
+    <figure class="kv-feature wall-feature reveal">
+      <img src="assets/brand/wowwall-wide.webp" alt="WowWall 留言墙界面预览">
+      <figcaption>
+        <b>WOWWALL · 三校共写留言墙</b>
+        <span>LIVE MESSAGE BOARD</span>
+      </figcaption>
+    </figure>
+    <div class="wall-cta reveal">
+      <a class="btn primary" id="wallCta" href="https://wall.qianc.ltd/" target="_blank" rel="noopener">前往留言 ↗</a>
+      <span class="wall-note" id="wallNote">WALL.QIANC.LTD / 活动墙 · 灵感墙 · 答疑墙</span>
+    </div>
+  </div>
+</section>
+
+<section id="retro">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="sec-label">06 / RETROSPECT</p><h2 class="sec-title">往期回顾</h2></div>
+      <p class="sec-desc">三场已经发生过的 WowLand 活动，点进去看看当时的现场与成果。</p>
+    </div>
+    <div class="retro-grid" id="retroWrap"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>WOWLAND<span style="color:var(--red)">.</span></b>
+        <p id="footSlogan"></p>
+        <p style="margin-top:8px;font-family:var(--mono);font-size:11px;color:#7b8f9d" id="footAlliance"></p>
+      </div>
+      <div class="foot-col">
+        <h5>NAVIGATE</h5>
+        <a href="#about">关于 WowLand</a>
+        <a href="#brands">活动品牌</a>
+        <a href="#board">公告板</a>
+        <a href="#wall">留言墙</a>
+        <a href="#records">活动记录</a>
+      </div>
+      <div class="foot-col">
+        <h5>ENTRANCE</h5>
+        <button class="linklike qr-open" type="button">加入社群</button>
+        <a class="edit-anchor" href="#">编辑数据</a>
+        <a href="https://www.douyin.com/" target="_blank" rel="noopener">抖音平台 ↗</a>
+      </div>
+    </div>
+    <div class="copyright"><span>© 2026 温州奶龙大学 WowLand 筹备组</span><span>DESIGN REF: SAMSY.NINJA / CYBER INTERFACE</span></div>
+  </div>
+</footer>
+</div>
+<div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-label="加入三校社群二维码">
+  <div class="qr-card" id="qrCard">
+    <canvas class="qr-code-canvas" id="qrCodeCanvas" aria-hidden="true"></canvas>
+    <div class="qr-card-inner">
+    <button class="qr-close" id="qrClose" aria-label="关闭二维码弹窗">✕</button>
+    <div class="qr-head">
+      <div>
+        <p class="sec-label" style="margin:0">CONNECT / 加入 WowLand</p>
+        <h3>扫码加入三校常设群</h3>
+        <small>WENZHOU UNIVERSITY × MEDICAL × VOCATIONAL</small>
+      </div>
+    </div>
+    <div class="qr-grid">
+      <figure class="qr-item" style="--accent:#ff2e4d;margin:0">
+        <img src="assets/qr/qr-wzu.jpg" alt="温州大学 WowLand 抖音群聊二维码">
+        <b>温州大学</b>
+        <small>WENZHOU UNIVERSITY</small>
+      </figure>
+      <figure class="qr-item" style="--accent:#31e8c8;margin:0">
+        <img src="assets/qr/qr-wm.jpg" alt="温州医科大学 WowLand 抖音群聊二维码">
+        <b>温州医科大学</b>
+        <small>WENZHOU MEDICAL UNIVERSITY</small>
+      </figure>
+      <figure class="qr-item" style="--accent:#ffd54a;margin:0">
+        <img src="assets/qr/qr-wzvc.jpg" alt="温州职业技术大学 WowLand 抖音群聊二维码">
+        <b>温州职业技术大学</b>
+        <small>WENZHOU VOCATIONAL &amp; TECHNICAL UNIVERSITY</small>
+      </figure>
+    </div>
+    <div class="qr-hint"><span>GUIDE</span><span>二维码从左到右依次为温州大学、温州医科大学、温州职业技术大学 · 抖音扫码进群</span></div></div>
+  </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

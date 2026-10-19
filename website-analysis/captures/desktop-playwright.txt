@@ -1,0 +1,123 @@
+URL https://samsy.ninja/
+TITLE SMSY-Gen02 | Award Winning Creative Graphics Engineer
+TEXT
+
+HTML
+<!DOCTYPE html><html lang="en"><head>
+
+         <meta charset="UTF-8">
+         <title>SMSY-Gen02 | Award Winning Creative Graphics Engineer</title>
+
+         <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+         
+         <!-- Basic SEO Meta Tags -->
+         <meta name="description" content="SMSY-Gen02 - Award winning Creative Graphics Engineer specializing in WebGPU, WebGL, three.js, and interactive 3D experiences.">
+         <meta name="author" content="SMSY">
+         <meta name="keywords" content="portfolio, creative, design, projects, Gen02, WebGPU, WebGL, three.js, 3D, interactive, developer">
+
+         <!-- Open Graph Meta Tags (Facebook) -->
+         <meta property="og:title" content="SMSY-Gen02 | Award Winning Creative Graphics Engineer">
+         <meta property="og:description" content="Award winning Creative Graphics Engineer specializing in WebGPU, WebGL, three.js, and interactive 3D experiences.">
+         <meta property="og:image" content="https://samsy.ninja/textures/media.png">
+         <meta property="og:image:secure_url" content="https://samsy.ninja/textures/media.png">
+         <meta property="og:image:type" content="image/png">
+         <meta property="og:image:width" content="1200">
+         <meta property="og:image:height" content="628">
+         <meta property="og:image:alt" content="SMSY-Gen02 - Creative Graphics Engineer Portfolio">
+         <meta property="og:url" content="https://samsy.ninja">
+         <meta property="og:type" content="website">
+         <meta property="og:site_name" content="SMSY-Gen02">
+         <meta property="og:locale" content="en_US">
+
+         <!-- Twitter Card Meta Tags -->
+         <meta name="twitter:card" content="summary_large_image">
+         <meta name="twitter:title" content="SMSY-Gen02 | Award Winning Creative Graphics Engineer">
+         <meta name="twitter:description" content="Award winning Creative Graphics Engineer specializing in WebGPU, WebGL, three.js, and interactive 3D experiences.">
+         <meta name="twitter:image" content="https://samsy.ninja/textures/media.png">
+         <meta name="twitter:image:alt" content="SMSY-Gen02 - Creative Graphics Engineer Portfolio">
+         <meta name="twitter:creator" content="@samsyyyy">
+         <meta name="twitter:site" content="@samsyyyy">
+
+         <!-- Additional Meta Tags -->
+         <meta name="theme-color" content="#000000">
+         <meta name="msapplication-TileColor" content="#000000">
+         <meta name="apple-mobile-web-app-capable" content="yes">
+         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+         <!-- Canonical URL -->
+         <link rel="canonical" href="https://samsy.ninja">
+
+         <!-- Favicon -->
+         <link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+         <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+         <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+         <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+         <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-chrome-192x192.png">
+         <link rel="icon" type="image/png" sizes="512x512" href="./favicons/android-chrome-512x512.png">
+
+        <link rel="stylesheet" href="https://use.typekit.net/twe8lcf.css">
+         
+
+     <script type="module" crossorigin="" src="./assets/js/main-ITpbzWAg.js"></script>
+     <link rel="stylesheet" crossorigin="" href="./assets/css/main-rb3R8F1q.css">
+   <style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity 0.1s linear;-o-transition:opacity 0.1s linear;-moz-transition:opacity 0.1s linear;transition:opacity 0.1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1 !important}.dg.main:hover .close-button,.dg.main .close-button.drag{opacity:1}.dg.main .close-button{-webkit-transition:opacity 0.1s linear;-o-transition:opacity 0.1s linear;-moz-transition:opacity 0.1s linear;transition:opacity 0.1s linear;border:0;position:absolute;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-x:hidden}.dg.a.has-save ul{margin-top:27px}.dg.a.has-save ul.closed{margin-top:0}.dg.a .save-row{position:fixed;top:0;z-index:1002}.dg li{-webkit-transition:height 0.1s ease-out;-o-transition:height 0.1s ease-out;-moz-transition:height 0.1s ease-out;transition:height 0.1s ease-out}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;overflow:hidden;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid rgba(0,0,0,0)}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li > *{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:9px}.dg .c select{margin-top:5px}.dg .cr.function,.dg .cr.function .property-name,.dg .cr.function *,.dg .cr.boolean,.dg .cr.boolean *{cursor:pointer}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0px 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco, monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande', sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px 4px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2fa1d6}.dg .cr.number input[type=text]{color:#2fa1d6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.function:hover,.dg .cr.boolean:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2fa1d6}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}
+</style></head>
+
+    <body><canvas id="dat-canvas" data-engine="three.js r182dev webgpu" style="width: 100%; height: 100%; outline: none; position: absolute; left: 0px; top: 0px; max-width: 100%; max-height: 100%; touch-action: none;"></canvas>
+
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T6R7J0D4NK"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T6R7J0D4NK');
+      </script>
+
+ 
+
+       <div id="preloader" style="display: block; opacity: 1; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 9999; background: black;">  </div>
+
+       <div id="app"></div>
+
+    
+</body></html>
+STORAGE {"local":{},"session":{},"cookies":[{"name":"_ga","value":"GA1.1.281336872.1792328462","domain":".samsy.ninja","path":"/","expires":1826888462.142509,"httpOnly":false,"secure":false,"sameSite":"Lax"},{"name":"_ga_T6R7J0D4NK","value":"GS2.1.s1792328462$o1$g0$t1792328462$j60$l0$h0","domain":".samsy.ninja","path":"/","expires":1826888462.147867,"httpOnly":false,"secure":false,"sameSite":"Lax"}]}
+RESOURCE_PERFORMANCE [
+  {
+    "name": "https://use.typekit.net/twe8lcf.css",
+    "type": "link",
+    "ms": 30026,
+    "bytes": 0
+  },
+  {
+    "name": "https://samsy.ninja/assets/js/main-ITpbzWAg.js",
+    "type": "script",
+    "ms": 55163,
+    "bytes": 853664
+  },
+  {
+    "name": "https://www.googletagmanager.com/gtag/js?id=G-T6R7J0D4NK",
+    "type": "script",
+    "ms": 343,
+    "bytes": 0
+  },
+  {
+    "name": "https://samsy.ninja/assets/css/main-rb3R8F1q.css",
+    "type": "link",
+    "ms": 4598,
+    "bytes": 8573
+  },
+  {
+    "name": "https://www.google-analytics.com/g/collect?v=2&tid=G-T6R7J0D4NK&gtm=45je6af0h2v9227808833za208zd9227808833xf1&_p=1792328462112&gcd=13l3l3l3l1l1&npa=0&dma=0&cid=281336872.1792328462&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1440x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B155.0.8059.82%7CChromium%3B155.0.8059.82%7CNot(A%253ABrand%3B24.0.0.0&uam=&uamb=0&uap=macOS&uapv=26.5.1&uaw=0&ul=zh-cn&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792328462&sct=1&seg=0&dl=https%3A%2F%2Fsamsy.ninja%2F&dt=SMSY-Gen02%20%7C%20Award%20Winning%20Creative%20Graphics%20Engineer&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=35090",
+    "type": "fetch",
+    "ms": 2993,
+    "bytes": 0
+  },
+  {
+    "name": "https://www.google-analytics.com/g/collect?v=2&tid=G-T6R7J0D4NK&gtm=45je6af0h2v9227808833za200zd9227808833xf1&_p=1792328462112&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&cid=281336872.1792328462&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1440x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B155.0.8059.82%7CChromium%3B155.0.8059.82%7CNot(A%253ABrand%3B24.0.0.0&uam=&uamb=0&uap=macOS&uapv=26.5.1&uaw=0&ul=zh-cn&_s=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034&sid=1792328462&sct=1&seg=0&dl=https%3A%2F%2Fsamsy.ninja%2F&dt=SMSY-Gen02%20%7C%20Award%20Winning%20Creative%20Graphics%20Engineer&en=scroll&epn.percent_scrolled=90&_et=4&tfd=40095",
+    "type": "fetch",
+    "ms": 180,
+    "bytes": 0
+  }
+]
