@@ -78,6 +78,134 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   renderBoard();
 
+  // 公告板终端流：滚入后把站点数据转为终端序列，逐字输出并保持循环
+  const boardBody=$('#noticeList');
+  let boardTimers=[];
+  const boardDelay={char:14,line:300,loop:5200};
+
+  function terminalNoticeGroups(){
+    const groups=D.notices.map(n=>[
+      [
+        {cls:'tok-p',text:'$ '},
+        {cls:'tok-cmd',text:`wowland --notice "${n.title}"`}
+      ],
+      [
+        {cls:'tok-dim',text:'> time: '},
+        {cls:'tok-k',text:n.date},
+        {cls:'tok-dim',text:' / status: '},
+        {cls:'tok-o',text:n.status}
+      ],
+      [
+        {cls:'tok-dim',text:'> '},
+        {cls:'tok-cmd',text:n.body},
+        {cls:'tok-ok',text:'  OK'}
+      ]
+    ]);
+    groups.push([[{cls:'tok-ok',text:'✓ BOARD SYNCED — 等待下一条公告…'}]]);
+    return groups;
+  }
+
+  function createBoardLine(segments){
+    const lineEl=document.createElement('div');
+    lineEl.className='ln board-stream-line';
+    const targets=segments.map(segment=>{
+      const span=document.createElement('span');
+      if(segment.cls) span.className=segment.cls;
+      span.dataset.text=segment.text;
+      lineEl.appendChild(span);
+      return span;
+    });
+    return {lineEl,targets};
+  }
+
+  function renderStaticBoardStream(){
+    boardBody.innerHTML='';
+    terminalNoticeGroups().forEach(group=>{
+      const groupEl=document.createElement('div');
+      groupEl.className='board-stream-group is-static';
+      group.forEach(segments=>{
+        const {lineEl,targets}=createBoardLine(segments);
+        targets.forEach(span=>{span.textContent=span.dataset.text});
+        groupEl.appendChild(lineEl);
+      });
+      boardBody.appendChild(groupEl);
+    });
+  }
+
+  function typeBoardGroup(group,done){
+    const groupEl=document.createElement('div');
+    groupEl.className='board-stream-group';
+    boardBody.appendChild(groupEl);
+    let lineIndex=0;
+
+    function typeNextLine(){
+      if(lineIndex>=group.length){
+        done();
+        return;
+      }
+      const {lineEl,targets}=createBoardLine(group[lineIndex]);
+      const caret=document.createElement('span');
+      caret.className='board-caret';
+      groupEl.appendChild(lineEl);
+      let targetIndex=0,charIndex=0;
+
+      (function typeChar(){
+        while(targetIndex<targets.length && !targets[targetIndex].dataset.text.length) targetIndex++;
+        if(targetIndex>=targets.length){
+          caret.remove();
+          lineIndex++;
+          boardTimers.push(setTimeout(typeNextLine,boardDelay.line));
+          return;
+        }
+        const target=targets[targetIndex];
+        const text=target.dataset.text;
+        charIndex++;
+        target.textContent=text.slice(0,charIndex);
+        target.after(caret);
+        if(charIndex>=text.length){
+          targetIndex++;
+          charIndex=0;
+        }
+        boardTimers.push(setTimeout(typeChar,boardDelay.char));
+      })();
+    }
+    typeNextLine();
+  }
+
+  function startBoardTyping(){
+    boardTimers.forEach(clearTimeout);
+    boardTimers=[];
+    if(prefersReduced.matches){
+      renderStaticBoardStream();
+      return;
+    }
+    boardBody.innerHTML='';
+    const groups=terminalNoticeGroups();
+    let groupIndex=0;
+    (function typeNextGroup(){
+      if(groupIndex>=groups.length){
+        boardTimers.push(setTimeout(startBoardTyping,boardDelay.loop));
+        return;
+      }
+      typeBoardGroup(groups[groupIndex],()=>{
+        groupIndex++;
+        typeNextGroup();
+      });
+    })();
+  }
+
+  if(prefersReduced.matches){
+    renderStaticBoardStream();
+  }else{
+    const boardObserver=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){
+        startBoardTyping();
+        boardObserver.disconnect();
+      }
+    },{threshold:.3});
+    boardObserver.observe(boardBody);
+  }
+
   // Retro (往期回顾)
   const toneMap=['','cyan','amber'];
   $('#retroWrap').innerHTML=D.retro.map((r,i)=>`

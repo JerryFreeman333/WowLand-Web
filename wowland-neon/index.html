@@ -165,13 +165,16 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
       <div><p class="sec-label">04 / BULLETIN</p><h2 class="sec-title">活动公告板</h2></div>
       <p class="sec-desc">三校社群筹备信息、招募入口和未来活动安排都会在这里更新。</p>
     </div>
-    <div class="panel">
+    <div class="panel board-terminal">
       <div class="panel-head">
-        <div><h3>最新公告</h3><small>SYSTEM: CAMPUS BOARD / WENZHOU</small></div>
+        <div class="board-head-main">
+          <span class="board-window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+          <div><h3>最新公告</h3><small>SYSTEM: CAMPUS BOARD / WENZHOU</small></div>
+        </div>
         <div class="panel-live" aria-hidden="true"><i></i><b>LIVE FEED</b><span>CH-04</span></div>
       </div>
-      <div class="panel-body" id="noticeList"></div>
-      <div class="panel-foot" style="padding:16px 22px 20px"><a class="edit-anchor" href="#" style="color:var(--cyan)">EDIT BOARD ↗</a></div>
+      <div class="panel-body board-screen" id="noticeList" aria-label="活动公告终端流" aria-live="off"></div>
+      <div class="panel-foot board-foot"><a class="edit-anchor" href="#">EDIT BOARD ↗</a><span class="board-live-badge" aria-hidden="true"><b>TYPING</b><span>CH-04</span></span></div>
     </div>
   </div>
 </section>
