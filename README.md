@@ -23,6 +23,10 @@ python3 -m http.server 8080
 └── website-analysis/    # 参考站点分析、页面结构、交互与实现计划
 ```
 
+## 视觉与交互
+
+当前版本已完成全站赛博朋克交互美术升级：HUD 框架与实时遥测、自定义霓虹光标、区块专属艺术层、CRT 活动记录空状态、终端数据流、卡片聚光与倾斜交互。细节见 `wowland-neon/README.md`。
+
 ## 网站内容
 
 - `wowland-neon/index.html`：页面结构

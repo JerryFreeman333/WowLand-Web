@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if(!D.networks) return;
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
+  const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = matchMedia('(hover:hover) and (pointer:fine)');
 
   // Every normal page open, refresh, or history restore starts at the hero.
   // Navigation clicks still work after load; only the persisted entry position is reset.
@@ -88,12 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
     </article>`).join('');
 
   // Boot
-  setTimeout(()=>{$('.boot').classList.add('done')},850);
+  setTimeout(()=>{
+    $('.boot')?.classList.add('done');
+    document.body.classList.add('booted');
+  },1150);
+  setTimeout(()=>{$('.boot')?.remove()},2100);
 
   // Nav
   const burger=$('#burger'), links=$('#navLinks');
-  burger.addEventListener('click',()=>{links.classList.toggle('open');burger.setAttribute('aria-expanded',links.classList.contains('open'))});
-  links.addEventListener('click',e=>{if(e.target.closest('a'))links.classList.remove('open')});
+  const setMenu = open => {
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-lock', open);
+  };
+  burger.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
+  links.addEventListener('click',e=>{if(e.target.closest('a,button'))setMenu(false)});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open'))setMenu(false)});
+  addEventListener('resize',()=>{if(innerWidth>1250&&links.classList.contains('open'))setMenu(false)});
 
   // Active nav
   const sections=['about','brands','board','records','wall','retro'];
@@ -174,6 +187,237 @@ document.addEventListener('DOMContentLoaded', () => {
     <circle class="r" cx="430" cy="130" r="3.5"/>
   </svg>`;
   document.querySelector('.hero').insertAdjacentHTML('afterbegin',circuit);
+
+  // ============================================================
+  // CYBER ART LAYER 3.0 — interaction art wiring
+  // ============================================================
+  const sectorMeta = {
+    top:     { code:'00 / UPLINK',    accent:'#ff2e4d' },
+    about:   { code:'01 / ORIGIN',    accent:'#ff2e4d' },
+    brands:  { code:'02 / PROGRAMS',  accent:'#31e8c8' },
+    path:    { code:'03 / PROTOCOL',  accent:'#ffd54a' },
+    board:   { code:'04 / BULLETIN',  accent:'#ff2e4d' },
+    records: { code:'05 / FIELD LOG', accent:'#31e8c8' },
+    wall:    { code:'06 / WALL',      accent:'#8b78ff' },
+    retro:   { code:'07 / ARCHIVE',   accent:'#ffd54a' }
+  };
+
+  // Big sector glyphs, readouts and orbital art behind every section
+  $$('main > section').forEach((sec, i) => {
+    const meta = sectorMeta[sec.id] || { code:`0${i} / SECTOR`, accent:'#ff2e4d' };
+    sec.style.setProperty('--sector-accent', meta.accent);
+    const art = document.createElement('div');
+    art.className = 'sector-art';
+    art.setAttribute('aria-hidden', 'true');
+    art.innerHTML = `
+      <span class="sector-art-index">${String(i).padStart(2,'0')}</span>
+      <span class="sector-art-code">${meta.code} // WENZHOU NODE // ${meta.accent.toUpperCase()}</span>
+      <span class="sector-art-ring"></span>
+      <span class="sector-art-bars"></span>
+      <span class="sector-art-cross"></span>`;
+    sec.prepend(art);
+  });
+
+  // Four-corner HUD brackets on every framed surface
+  $$('.cyber-corners').forEach(el => {
+    const extra = document.createElement('i');
+    extra.className = 'corner-extra';
+    extra.setAttribute('aria-hidden', 'true');
+    el.appendChild(extra);
+  });
+
+  // Perspective spotlight layer + pointer-follow glow
+  const fxTargets = $$('.brand-card,.retro-card,.step,.about-card,.panel,.campus-panel,.kv-feature');
+  fxTargets.forEach(el => {
+    const fx = document.createElement('span');
+    fx.className = 'card-fx';
+    fx.setAttribute('aria-hidden', 'true');
+    el.prepend(fx);
+  });
+
+  // Identity readout on the about card
+  const intro = $('#intro');
+  if(intro){
+    intro.insertAdjacentHTML('beforebegin',
+      '<div class="about-readout" aria-hidden="true"><span>PROFILE // WOWLAND</span><b>ID 3C-2026</b><span>STATUS: ACTIVE</span></div>');
+  }
+
+  // Circuit nodes on protocol steps + archive rings on retro cards
+  $$('.step').forEach((step, i) => {
+    step.style.setProperty('--step-index', String(i + 1));
+    step.insertAdjacentHTML('afterbegin', '<span class="step-node" aria-hidden="true"></span>');
+  });
+  $$('.retro-card').forEach((card, i) => {
+    card.insertAdjacentHTML('beforeend',
+      `<span class="retro-visual" aria-hidden="true"></span><span class="retro-file" aria-hidden="true">ARCHIVE_${String(i + 1).padStart(2,'0')}.DAT</span>`);
+  });
+
+  // CRT signal waveform in the empty activity-log viewport
+  const logWave = $('#logWave');
+  if(logWave){
+    logWave.innerHTML = Array.from({length:34}, (_, i) => {
+      const h = 16 + Math.round(Math.random() * 84);
+      const d = (i * 0.055).toFixed(2);
+      return `<i style="--h:${h}%;--d:${d}s"></i>`;
+    }).join('');
+  }
+
+  // Hero network status cycles like a live terminal
+  const netStatus = $('#netStatus');
+  if(netStatus && !prefersReduced.matches){
+    const statuses = ['ONLINE','SYNCING','LINKED','STABLE'];
+    let si = 0;
+    setInterval(() => {
+      netStatus.classList.add('swap');
+      setTimeout(() => {
+        si = (si + 1) % statuses.length;
+        netStatus.textContent = statuses[si];
+        netStatus.classList.remove('swap');
+      }, 150);
+    }, 3200);
+  }
+
+  // ---- HUD telemetry: section, coordinates, clock, scroll progress ----
+  const hudSection = $('#hudSection');
+  const hudCoords = $('#hudCoords');
+  const hudClock = $('#hudClock');
+  const hudProgress = $('#hudProgress');
+  const hudLabels = {
+    top:'00 / HERO', about:'01 / ORIGIN', brands:'02 / PROGRAMS', path:'03 / PROTOCOL',
+    board:'04 / BULLETIN', records:'05 / FIELD LOG', wall:'06 / WALL', retro:'07 / ARCHIVE'
+  };
+  if(hudSection){
+    const hudObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting && hudLabels[e.target.id]) hudSection.textContent = hudLabels[e.target.id];
+      });
+    }, { rootMargin:'-42% 0px -52% 0px' });
+    $$('main > section').forEach(sec => hudObs.observe(sec));
+  }
+
+  let coordX = 0, coordY = 0, coordRaf = null;
+  const paintCoords = () => {
+    if(hudCoords) hudCoords.textContent =
+      `X ${String(Math.max(0, Math.round(coordX))).padStart(4,'0')} / Y ${String(Math.max(0, Math.round(coordY))).padStart(4,'0')}`;
+    coordRaf = null;
+  };
+  addEventListener('pointermove', e => {
+    coordX = e.clientX; coordY = e.clientY;
+    if(!coordRaf) coordRaf = requestAnimationFrame(paintCoords);
+  }, { passive:true });
+
+  const paintClock = () => {
+    if(!hudClock) return;
+    const d = new Date();
+    hudClock.textContent = d.toLocaleTimeString('en-GB', { hour12:false });
+  };
+  paintClock();
+  setInterval(paintClock, 1000);
+
+  let progressQueued = false;
+  const paintProgress = () => {
+    progressQueued = false;
+    if(!hudProgress) return;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    hudProgress.style.setProperty('--p', p.toFixed(4));
+  };
+  addEventListener('scroll', () => {
+    if(!progressQueued){ progressQueued = true; requestAnimationFrame(paintProgress); }
+  }, { passive:true });
+  addEventListener('resize', paintProgress);
+  paintProgress();
+  paintCoords();
+
+  // Yield the bottom HUD to the footer so the copyright stays legible
+  const footEl = document.querySelector('.site-foot');
+  if(footEl){
+    const footObs = new IntersectionObserver(entries => {
+      document.body.classList.toggle('at-footer', entries.some(e => e.isIntersecting));
+    }, { threshold:.06 });
+    footObs.observe(footEl);
+  }
+
+  // ---- Custom cyber cursor + click lock-on ripple ----
+  const cursor = $('#cursor');
+  const cursorLabel = $('#cursorLabel');
+  if(cursor && finePointer.matches && !prefersReduced.matches){
+    document.body.classList.add('cursor-ready');
+    let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
+    addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; }, { passive:true });
+    const cursorLoop = () => {
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      cursor.style.transform = `translate3d(${cx.toFixed(2)}px,${cy.toFixed(2)}px,0)`;
+      requestAnimationFrame(cursorLoop);
+    };
+    cursorLoop();
+
+    const hotZone = 'a,button,.brand-card,.retro-card,.step,.campus,.notice,.qr-item,.panel,.hero-poster-link,.log-empty';
+    document.addEventListener('pointerover', e => {
+      const hit = e.target.closest(hotZone);
+      cursor.classList.toggle('is-active', !!hit);
+      if(cursorLabel){
+        cursorLabel.textContent = hit
+          ? (hit.dataset.cursor || (hit.matches('a,button') ? 'OPEN' : 'SCAN'))
+          : 'LINK';
+      }
+    });
+    document.addEventListener('pointerdown', e => {
+      cursor.classList.add('is-down');
+      if(prefersReduced.matches) return;
+      const ring = document.createElement('span');
+      ring.className = 'click-ring';
+      ring.style.left = `${e.clientX}px`;
+      ring.style.top = `${e.clientY}px`;
+      document.body.appendChild(ring);
+      ring.addEventListener('animationend', () => ring.remove(), { once:true });
+    });
+    document.addEventListener('pointerup', () => cursor.classList.remove('is-down'));
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+  }
+
+  // ---- Spotlight + tilt for framed cards ----
+  if(finePointer.matches && !prefersReduced.matches){
+    fxTargets.forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        const x = Math.min(1, Math.max(0, (e.clientX - r.left) / Math.max(1, r.width)));
+        const y = Math.min(1, Math.max(0, (e.clientY - r.top) / Math.max(1, r.height)));
+        el.style.setProperty('--mx', `${(x * 100).toFixed(1)}%`);
+        el.style.setProperty('--my', `${(y * 100).toFixed(1)}%`);
+        if(el.matches('.brand-card,.retro-card,.step')){
+          el.style.setProperty('--tilt-x', `${((0.5 - y) * 4).toFixed(2)}deg`);
+          el.style.setProperty('--tilt-y', `${((x - 0.5) * 6).toFixed(2)}deg`);
+        }
+      }, { passive:true });
+      el.addEventListener('pointerleave', () => {
+        el.style.setProperty('--mx', '50%');
+        el.style.setProperty('--my', '50%');
+        el.style.setProperty('--tilt-x', '0deg');
+        el.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+  }
+
+  // Section title glitch burst when a sector is acquired
+  const titleGlitchObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const title = e.target.querySelector('.sec-title');
+      if(title && !prefersReduced.matches){
+        title.classList.add('glitch-in');
+        setTimeout(() => title.classList.remove('glitch-in'), 650);
+      }
+      titleGlitchObs.unobserve(e.target);
+    });
+  }, { threshold:.32 });
+  $$('main > section').forEach(sec => { if(sec.id) titleGlitchObs.observe(sec); });
+
+  // Keep the QR chrome above the generated decoration layer
+  const qrCardEl = $('#qrCard');
+  if(qrCardEl) qrCardEl.style.setProperty('--sector-accent', '#31e8c8');
 
   // Periodic glitch flicker on the neon "WowLand" wordmark
   setInterval(()=>{

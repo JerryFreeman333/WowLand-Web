@@ -20,8 +20,16 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
 <a class="skip" href="#main">跳到主要内容</a>
 
 <div class="boot" aria-hidden="true">
+  <div class="boot-grid"></div>
   <div class="boot-inner">
-    <div class="boot-logo">WOWLAND</div>
+    <div class="boot-top"><span>WOWLAND.SYS</span><span>BUILD 2026.10</span></div>
+    <div class="boot-logo" data-text="WOWLAND">WOWLAND</div>
+    <div class="boot-log">
+      <span><b>&gt;</b> BOOTING NEURAL LINK <i>OK</i></span>
+      <span><b>&gt;</b> MOUNTING 3 CAMPUS NODES <i>OK</i></span>
+      <span><b>&gt;</b> DECRYPTING WOWLAND.SYS <i>OK</i></span>
+      <span><b>&gt;</b> ESTABLISHING UPLINK <i class="boot-live">LIVE</i></span>
+    </div>
     <div class="boot-bar"><i></i></div>
     <small>INITIALIZING WENZHOU CAMPUS NETWORK</small>
   </div>
@@ -31,6 +39,28 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
 <div class="noise" aria-hidden="true"></div>
 <div class="scan" aria-hidden="true"></div>
 
+<!-- CYBER HUD // global interaction frame -->
+<div class="cyber-frame" aria-hidden="true">
+  <span class="frame-corner fc-tl"></span>
+  <span class="frame-corner fc-tr"></span>
+  <span class="frame-corner fc-bl"></span>
+  <span class="frame-corner fc-br"></span>
+  <span class="frame-rail rail-left"></span>
+  <span class="frame-rail rail-right"></span>
+  <span class="hud-progress"><i id="hudProgress"></i></span>
+</div>
+<div class="hud-status" aria-hidden="true">
+  <span class="hud-status-item"><b class="hud-led"></b>LINK SECURE</span>
+  <span class="hud-status-item" id="hudSection">00 / HERO</span>
+  <span class="hud-status-item hud-coords" id="hudCoords">X 0000 / Y 0000</span>
+  <span class="hud-status-item" id="hudClock">00:00:00</span>
+</div>
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor-ring"></span>
+  <span class="cursor-dot"></span>
+  <span class="cursor-label" id="cursorLabel">LINK</span>
+</div>
+
 <div class="shell">
 <header class="nav">
   <div class="nav-inner">
@@ -38,6 +68,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
       <img class="brand-logo" src="assets/brand/logo-mark.webp" alt="抖音校园 WowLand 标识">
       <span><b id="brandShort">WOWLAND</b><small id="alliance">三校联盟</small></span>
     </a>
+    <div class="nav-signal" aria-hidden="true"><i></i><span>NODES 03</span><b>UPLINK</b></div>
     <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false">☰</button>
     <nav class="nav-links" id="navLinks" aria-label="主导航">
       <a href="#about">关于</a>
@@ -55,10 +86,13 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
 <div class="hero-mesh" aria-hidden="true"></div>
 <section class="hero" id="top">
   <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="hero-sidecode" aria-hidden="true">CAMPUS PROTOCOL<br>VER 3.0 // WENZHOU<br><span>UPLINK STABLE</span></div>
+  <div class="hero-barcode" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
-      <p class="kicker"><i></i> WENZHOU CAMPUS NETWORK · ONLINE</p>
-      <h1 class="title"><span>温州奶龙大学</span><br><span class="cyber">WowLand</span><span class="pink">.</span></h1>
+      <p class="kicker"><i></i> WENZHOU CAMPUS NETWORK · <b id="netStatus">ONLINE</b></p>
+      <h1 class="title"><span>温州奶龙大学</span><br><span class="cyber" data-text="WowLand">WowLand</span><span class="pink">.</span></h1>
       <p class="hero-sub">陪大学生真实开始、持续生长的成长世界。<br>三个活动品牌，三校联合，让想法落地、让创造被看见。</p>
       <div class="hero-meta">
         <span class="chip">温州大学</span><span class="chip">温州医科大学</span><span class="chip">温州职业技术大学</span>
@@ -78,7 +112,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="about">
+<section id="about" data-sector="ORIGIN">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">01 / ABOUT WOWLAND</p><h2 class="sec-title">社群定位</h2></div>
@@ -103,7 +137,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="brands">
+<section id="brands" data-sector="PROGRAMS">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">02 / PROGRAMS</p><h2 class="sec-title">三个系列活动品牌</h2></div>
@@ -113,7 +147,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="path">
+<section id="path" data-sector="PROTOCOL">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">03 / HOW TO JOIN</p><h2 class="sec-title">从常设群到活动群</h2></div>
@@ -123,7 +157,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="board">
+<section id="board" data-sector="BULLETIN">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">04 / BULLETIN</p><h2 class="sec-title">活动公告板</h2></div>
@@ -132,6 +166,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
     <div class="panel">
       <div class="panel-head">
         <div><h3>最新公告</h3><small>SYSTEM: CAMPUS BOARD / WENZHOU</small></div>
+        <div class="panel-live" aria-hidden="true"><i></i><b>LIVE FEED</b><span>CH-04</span></div>
       </div>
       <div class="panel-body" id="noticeList"></div>
       <div class="panel-foot" style="padding:16px 22px 20px"><a class="edit-anchor" href="#" style="color:var(--cyan)">EDIT BOARD ↗</a></div>
@@ -139,7 +174,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="records">
+<section id="records" data-sector="FIELD LOG">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">05 / FIELD LOG</p><h2 class="sec-title">活动记录</h2></div>
@@ -147,26 +182,34 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
     </div>
     <div class="log-grid" id="logPreview">
       <div class="log-empty">
-        <div>
+        <span class="log-corners" aria-hidden="true"></span>
+        <div class="log-wave" id="logWave" aria-hidden="true"></div>
+        <div class="log-copy">
           <b>NO SIGNAL</b>
           <p>首批活动记录尚未产生。<br>未来会在这里接入照片、作品链接、参与名单与复盘档案。</p>
+        </div>
+        <div class="log-readout" aria-hidden="true">
+          <span>CH-05 // FREQ 00.0</span><span>FRAME 0000</span><span class="log-rec">REC</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="wall">
+<section id="wall" data-sector="WALL">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="sec-label">06 / WOW WALL</p><h2 class="sec-title">WowWall 留言墙</h2></div>
       <p class="sec-desc">把想说的话贴上去——灵感、提问、活动应援，都在三校共同的留言墙上。</p>
     </div>
     <figure class="kv-feature wall-feature reveal">
+      <span class="wall-hud wall-hud-tl" aria-hidden="true">CAM_06 / LIVE</span>
+      <span class="wall-hud wall-hud-tr" aria-hidden="true">SIGNAL 98%</span>
+      <span class="wall-glitch" aria-hidden="true"></span>
       <img src="assets/brand/wowwall-poster.webp" alt="WowWall 留言墙海报">
       <figcaption>
         <b>WOWWALL · 三校共写留言墙</b>
-        <span>LIVE MESSAGE BOARD</span>
+        <span>LIVE MESSAGE BOARD // 三校节点同步中</span>
       </figcaption>
     </figure>
     <div class="wall-cta reveal">
@@ -176,10 +219,10 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </section>
 
-<section id="retro">
+<section id="retro" data-sector="ARCHIVE">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="sec-label">06 / RETROSPECT</p><h2 class="sec-title">往期回顾</h2></div>
+      <div><p class="sec-label">07 / RETROSPECT</p><h2 class="sec-title">往期回顾</h2></div>
       <p class="sec-desc">三场已经发生过的 WowLand 活动，点进去看看当时的现场与成果。</p>
     </div>
     <div class="retro-grid" id="retroWrap"></div>
@@ -189,6 +232,8 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
 </main>
 
 <footer class="site-foot">
+  <div class="foot-ghost" aria-hidden="true">WOWLAND</div>
+  <div class="foot-scan" aria-hidden="true"></div>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -215,8 +260,10 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   </div>
 </footer>
 </div>
-<div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-label="加入三校社群二维码">
-  <div class="qr-card" id="qrCard">
+<div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-label="加入三校社群二维码" aria-hidden="true">
+  <div class="qr-card cyber-corners" id="qrCard">
+    <span class="qr-scan" aria-hidden="true"></span>
+    <span class="qr-status" aria-hidden="true"><b>SECURE LINK</b> / 3 NODES / ENCRYPTED</span>
     <canvas class="qr-code-canvas" id="qrCodeCanvas" aria-hidden="true"></canvas>
     <div class="qr-card-inner">
     <button class="qr-close" id="qrClose" aria-label="关闭二维码弹窗">✕</button>
@@ -228,17 +275,17 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
       </div>
     </div>
     <div class="qr-grid">
-      <figure class="qr-item" style="--accent:#ff2e4d;margin:0">
+      <figure class="qr-item" style="--accent:#ff2e4d;margin:0"><span class="qr-node" aria-hidden="true">NODE_01</span>
         <img src="assets/qr/qr-wzu.jpg" alt="温州大学 WowLand 抖音群聊二维码">
         <b>温州大学</b>
         <small>WENZHOU UNIVERSITY</small>
       </figure>
-      <figure class="qr-item" style="--accent:#31e8c8;margin:0">
+      <figure class="qr-item" style="--accent:#31e8c8;margin:0"><span class="qr-node" aria-hidden="true">NODE_02</span>
         <img src="assets/qr/qr-wm.jpg" alt="温州医科大学 WowLand 抖音群聊二维码">
         <b>温州医科大学</b>
         <small>WENZHOU MEDICAL UNIVERSITY</small>
       </figure>
-      <figure class="qr-item" style="--accent:#ffd54a;margin:0">
+      <figure class="qr-item" style="--accent:#ffd54a;margin:0"><span class="qr-node" aria-hidden="true">NODE_03</span>
         <img src="assets/qr/qr-wzvc.jpg" alt="温州职业技术大学 WowLand 抖音群聊二维码">
         <b>温州职业技术大学</b>
         <small>WENZHOU VOCATIONAL &amp; TECHNICAL UNIVERSITY</small>
