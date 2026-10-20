@@ -311,7 +311,7 @@ body.glitching .title .cyber{animation:glitch .3s steps(2,end) 2}
 
 .hero-inner{position:relative}
 .hero-poster-link{position:absolute;right:34px;bottom:-20px;width:190px;border:1px solid rgba(255,46,77,.4);border-radius:18px;overflow:hidden;box-shadow:0 22px 60px #000a;background:#fff;z-index:5}
-.hero-poster-link img{width:100%;display:block}
+.hero-poster-link img{width:100%;height:auto;display:block}
 .hero-poster-link:hover{transform:translateY(-4px)}
 @media(max-width:1250px){.hero-poster-link{display:none}}
 
