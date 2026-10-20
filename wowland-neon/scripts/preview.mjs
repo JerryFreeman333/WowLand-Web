@@ -33,7 +33,17 @@ for(const [name,width,height,mobile] of [['desktop',1440,960,false],['tablet',90
  });
  console.log('motion:',JSON.stringify(motion));
  // Force-decode every image so full-page captures never miss a raster.
- await page.evaluate(async()=>{await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))});
+ await page.evaluate(async()=>{
+   const imgs=[...document.images];
+   imgs.forEach(i=>{i.loading='eager'});
+   await Promise.all(imgs.map(i=>new Promise(res=>{
+     if(i.complete) return res();
+     i.addEventListener('load',res,{once:true});
+     i.addEventListener('error',res,{once:true});
+     setTimeout(res,2500);
+   })));
+   await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));
+ });
  await page.waitForTimeout(200);
  await page.screenshot({path:path.join(root,'screenshots',`${name}-hero.png`)});
  if(name==='desktop'){
@@ -58,7 +68,17 @@ for(const [name,width,height,mobile] of [['desktop',1440,960,false],['tablet',90
  await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto'});
  await page.evaluate(async()=>{for(let y=0;y<=document.body.scrollHeight;y+=Math.round(innerHeight*.6)){scrollTo(0,y);await new Promise(r=>setTimeout(r,60))}scrollTo(0,0)});
  await page.waitForTimeout(1800);
- await page.evaluate(async()=>{await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))});
+ await page.evaluate(async()=>{
+   const imgs=[...document.images];
+   imgs.forEach(i=>{i.loading='eager'});
+   await Promise.all(imgs.map(i=>new Promise(res=>{
+     if(i.complete) return res();
+     i.addEventListener('load',res,{once:true});
+     i.addEventListener('error',res,{once:true});
+     setTimeout(res,2500);
+   })));
+   await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));
+ });
  await page.screenshot({path:path.join(root,'screenshots','mobile.png'),fullPage:true});
  await ctx.close();
 }

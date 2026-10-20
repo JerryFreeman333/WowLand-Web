@@ -25,7 +25,9 @@
 `.hero-mesh` 升级为全页固定的环境色场，随滚动在 Hero 配色（红为主 + 青/紫辅助）与内容区配色（紫/青为主 + 红收束）之间按视口高度关键帧插值，rAF 逐帧缓动（lerp 0.09），实现 Hero → 社群定位的平滑色彩过渡；`prefers-reduced-motion` 下直接跳至目标色。
 
 ## WowWall 留言墙
-原「官方视觉与说明物料」区已替换为 WowWall 留言墙：大屏展示用户提供的 WowWall 海报（`assets/brand/wowwall-poster.webp`），「前往留言」按钮跳转 `https://wall.qianc.ltd/`。链接与文案在 `data.js` 的 `wall` 字段维护；首屏迷你海报与导航均已指向留言墙。
+原「官方视觉与说明物料」区已替换为 WowWall 留言墙：大屏展示 WowWall 海报，首屏使用轻量缩略图（`assets/brand/wowwall-poster-thumb.webp`），下方大图使用 `assets/brand/wowwall-poster-large.webp` 并懒加载；原始高清文件 `wowwall-poster.webp` 保留用于兼容旧缓存。「前往留言」按钮跳转 `https://wall.qianc.ltd/`，链接与文案在 `data.js` 的 `wall` 字段维护。
+
+三校首屏图片使用 `assets/campus-*-cyber-2026-lite.webp`（1100px 宽，质量 74），原始 `assets/campus-*-cyber-2026.webp` 保留用于旧缓存兼容。
 
 ## 未来编辑入口
 1. 公告：编辑 `data.js` → `notices`
@@ -41,6 +43,12 @@
 - **卡片交互**：指针跟随聚光、3D 倾斜、扫描线、四角 HUD 标记与故障标题。
 - **终端式细节**：开机启动日志、区块编号与 ACCESS GRANTED 读数、页脚幽灵字、二维码弹窗 NODE 标签与扫描解码。
 - **无障碍**：`prefers-reduced-motion` 下关闭动画与自定义光标；保留键盘焦点、菜单 `Esc` 关闭和二维码焦点陷阱。
+
+## 首页图片加载优化
+- 三校首屏图压缩为 1100px 宽 WebP（质量 74），三张合计约 370KB，原始高清图保留用于旧缓存兼容。
+- WowWall 首屏缩略图约 26KB；下方 1600px 大图约 118KB，并使用 `loading="lazy"` 延迟加载。
+- 桌面端对首张校园图和 WowWall 缩略图做 `preload`；移动端不加载被隐藏的迷你海报。
+- 首屏图片总体积由约 1.7MB 降至约 0.4MB，Wall 大图不再阻塞首屏。
 
 ## 本地预览
 直接双击 `index.html`，或：

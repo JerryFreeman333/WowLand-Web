@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Campus
   const campusWrap = $('#campusWrap');
-  campusWrap.innerHTML = D.networks.map(n => `
+  campusWrap.innerHTML = D.networks.map((n,i) => `
     <figure class="campus reveal" style="--accent:${n.color}">
-      <img src="${n.image}" alt="${n.name}校园影像" loading="lazy">
+      <img src="${n.image}" alt="${n.name}校园影像" loading="lazy" decoding="async" fetchpriority="${i===0?'high':'auto'}">
       <small>${n.en}</small>
       <i>${n.status}</i>
       <b>${n.name}</b>
